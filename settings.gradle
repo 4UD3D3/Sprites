@@ -1,0 +1,4 @@
+
+rootProject.name = 'Sprites'
+
+include 'util', 'javafx', 'sprites.model', 'android'

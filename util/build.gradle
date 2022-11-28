@@ -1,0 +1,23 @@
+// java plugin
+plugins {
+    id 'java-library'
+}
+
+// sub-project description
+description = """General utilities"""
+
+// java configuration
+sourceCompatibility = '8'
+targetCompatibility = '8'
+
+dependencies {
+    // JSON library dependency
+    api 'org.json:json:20220320'
+    // JUnit and JSONassert library dependencies for unit testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.1'
+}
+
+test {
+    useJUnitPlatform()
+}

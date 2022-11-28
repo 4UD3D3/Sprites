@@ -1,0 +1,35 @@
+// project description
+version = 1.0
+description = """\
+Library that allow
+to load/save Zip files that contain JSON objects descriptions 
+and other resource files (text files).
+Project version: ${version}"""
+
+// projects repositories
+allprojects {
+    repositories {
+        mavenLocal()   // Maven local repository
+        mavenCentral() // Maven central repository
+        google()       // Google Android repository
+    }
+}
+
+// build repositories & dependencies (for extra gradle plugins)
+buildscript {
+    repositories {
+        mavenCentral() // Maven central repository
+        google()       // Google Android repository
+        dependencies {
+            classpath 'com.android.tools.build:gradle:7.2.2'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+    }
+}
+
+ext {
+    compileSdkVersion = 19
+    buildToolsVersion = "19.0.1"
+}

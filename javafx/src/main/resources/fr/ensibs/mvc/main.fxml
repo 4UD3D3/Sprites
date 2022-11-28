@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?><?import javafx.scene.layout.*?>
+
+<!-- ===================================================================== -->
+<!-- The application content                                               -->
+<!-- author: Pascale Launay                                                -->
+<!-- ===================================================================== -->
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.ensibs.mvc.ActionsHandler" prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Top component: menu bar -->
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Load" onAction="#handleAddFileAction"/>
+                <MenuItem text="Save" onAction="#handleSaveFileAction"/>
+                <MenuItem text="Reset" onAction="#handleResetAction"/>
+                <MenuItem text="Clear" onAction="#handleClearAction"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <!-- left component: list and "add" button -->
+    <left>
+        <BorderPane>
+            <center>
+                <ListView fx:id="listView" onMouseClicked="#handleListClicked"/>
+            </center>
+            <bottom>
+                <Button fx:id="addButton" text="Add" onAction="#handleAddItem" prefWidth="${addButton.parent.width}"/>
+            </bottom>
+        </BorderPane>
+    </left>
+
+    <!-- center component: text area -->
+    <center>
+        <StackPane fx:id="stackPane" prefHeight="${stackPane.parent.height}">
+            <!--TextArea fx:id="textArea" prefHeight="${textArea.parent.height}"/-->
+            <Group fx:id="textGroup">
+                <TextArea fx:id="textArea" prefHeight="${textArea.parent.parent.height}"/>
+            </Group>
+            <Group fx:id="imageGroup">
+                <Canvas fx:id="imageCanvas" width="${imageCanvas.parent.parent.width}" height="${imageCanvas.parent.parent.height}"/>
+            </Group>
+        </StackPane>
+    </center>
+
+    <!-- bottom component: label to show a message -->
+    <bottom>
+        <Label fx:id="messageLabel"/>
+    </bottom>
+</BorderPane>
